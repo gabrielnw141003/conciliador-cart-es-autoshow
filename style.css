@@ -1,0 +1,239 @@
+:root{
+    --fundo: #171717;
+    --superficie: #222222;
+    --borda: #383838;
+    --destaque: #d4d4d4;
+    --texto: #f5f5f5;
+    --texto-secundario: #a3a3a3;
+    --campo: #303030;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.aplicativo {
+    width: min(100%, 1100px);
+    margin: 0 auto;
+    padding: 32px;
+}
+
+.cabecalho {
+    margin-bottom: 28px;
+}
+
+.marca {
+    margin: 0 0 8px;
+    color: yellow;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 650;
+}
+
+.descricao {
+    margin-top: 10px;
+    color: var(--texto-secundario);
+    line-height: 1.6;
+}
+
+.painel {
+    margin-bottom: 20px;
+    padding: 24px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0 0 22px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--texto-secundario);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.linha-arquivo {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px;
+    color: var(--texto);
+    background: var(--campo);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+button {
+    padding: 11px 16px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.12);
+}
+
+.botao-secundario {
+    color: var(--texto);
+    background: var(--campo);
+}
+
+.botao-principal {
+    width: 100%;
+    margin-top: 4px;
+    padding: 14px;
+    color: #171717;
+    background: var(--destaque);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+#mensagem {
+    margin: 14px 0 0;
+    color: var(--texto-secundario);
+    line-height: 1.5;
+}
+
+.auditoria {
+    min-height: 200px;
+}
+
+#resultado {
+    margin: 0;
+    overflow: auto;
+    max-height: 340px;
+    color: var(--texto);
+    font: 12px/1.7 Consolas, monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .aplicativo {
+        padding: 20px 14px;
+    }
+
+    .painel {
+        padding: 18px;
+    }
+
+    .linha-arquivo {
+        flex-direction: column;
+    }
+}
+
+.terminal-container {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 15px;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+}
+
+/* Barra Superior da Janela */
+.terminal-header {
+    background-color: #161b22;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #21262d;
+    user-select: none;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-dot.close { background-color: #ff5f56; }
+.btn-dot.minimize { background-color: #ffbd2e; }
+.btn-dot.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    color: #8b949e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Corpo do Terminal (Corpo onde o JS escreve) */
+.terminal-body {
+    padding: 20px;
+    color: #e6edf3;
+    background-color: #0d1117;
+    font-size: 13px;
+    line-height: 1.6;
+    max-height: 480px;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Quebra linhas longas automaticamente */
+    word-break: break-all;
+    margin: 0;
+}
+
+/* Customização da Barra de Rolagem (Scrollbar) */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+.terminal-body::-webkit-scrollbar-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
