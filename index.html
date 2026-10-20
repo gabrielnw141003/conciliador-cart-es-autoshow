@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>conciliação de cartões</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main class="aplicativo">
+        <header class="cabeçalho">
+            <p class="marca">AUTO SHOW DISTRIBUIDORA</p>
+            <h1>Conciliação de Cartões</h1>
+            <p class="descrição">
+                Confira as vendas do relatório e da rede
+            </p>
+        </header>
+
+        <section class="painel">
+            <h2>Arquivos para Conferencia</h2>
+
+            <div class="campo">
+                <label for="arquivo-vendas">
+                    Relatorio de vendas ERP
+                </label>
+
+                <div class="linha-arquivo">
+                    <input
+                    id="arquivo-vendas"
+                    type="text"
+                    placeholder="Nenhum arquivo selecionado"
+                    readonly>
+
+                    <button
+                    id="selecionarVendas"
+                    class="botao-secundario"
+                    type="button"
+                    >
+                    Selecionar
+                    </button>
+                </div>
+                <input id="fileErp" type="file" accept=".xls,.xlsx,.csv" hidden>
+            </div>
+
+            <div class="campo">
+                <label for="arquivo-rede">
+                    Extrato da Maquininha (Rede)
+                </label>
+
+                    <div class="linha-arquivo">
+                        <input
+                        id="arquivo-rede"
+                        type="text"
+                        placeholder="Nenhum arquivo selecionado"
+                        readonly>
+
+                        <button
+                        id="selecionarRede"
+                        class="botao-secundario"
+                        type="button"
+                    >
+                        Selecionar
+                        </button>
+                    </div>
+                    <input id="fileRede" type="file" accept=".xls,.xlsx,.csv" hidden>
+            </div>
+
+            <button id="processar" class="botao-principal" type="button">
+                Realizar Conferência
+            </button>
+
+            <p id="mensagem" role="status" aria-live="polite">
+                Aguardando arquivos para conferência 
+            </p>
+        </section>
+
+        <section class="painelauditoria">
+            <h2>Auditoria dos Resultados</h2>
+            
+            <pre id="resultado">Aguardando primeira conferência</pre>
+        </section>
+    </main>
+</body>
+</html>
