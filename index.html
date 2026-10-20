@@ -81,8 +81,23 @@
 
         <section class="painelauditoria">
             <h2>Auditoria dos Resultados</h2>
-            
-            <pre id="resultado">Aguardando primeira conferência</pre>
+
+    <!-- Container da Janela do Terminal -->
+    <div class="terminal-container">
+        <!-- Barra de Título do Terminal -->
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn-dot close"></span>
+                <span class="btn-dot minimize"></span>
+                <span class="btn-dot maximize"></span>
+            </div>
+            <span class="terminal-title">bash — conciliador@autoshow: ~</span>
+        </div>
+
+        <!-- Área de Exibição dos Resultados (Mapeada pelo JS) -->
+        <pre id="resultado" class="terminal-body">Aguardando primeira conferência...</pre>
+    </div>
+</section>
         </section>
     </main>
 </body>
