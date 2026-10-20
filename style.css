@@ -161,3 +161,80 @@ button:hover {
         flex-direction: column;
     }
 }
+
+/* Container Principal do Terminal */
+.terminal-container {
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-top: 15px;
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+}
+
+/* Barra Superior da Janela */
+.terminal-header {
+    background-color: #161b22;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #21262d;
+    user-select: none;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.btn-dot.close { background-color: #ff5f56; }
+.btn-dot.minimize { background-color: #ffbd2e; }
+.btn-dot.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    color: #8b949e;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Corpo do Terminal (Corpo onde o JS escreve) */
+.terminal-body {
+    padding: 20px;
+    color: #e6edf3;
+    background-color: #0d1117;
+    font-size: 13px;
+    line-height: 1.6;
+    max-height: 480px;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Quebra linhas longas automaticamente */
+    word-break: break-all;
+    margin: 0;
+}
+
+/* Customização da Barra de Rolagem (Scrollbar) */
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+.terminal-body::-webkit-scrollbar-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 4px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+}
